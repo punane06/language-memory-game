@@ -1,0 +1,15 @@
+$color-primary: blue;
+
+.title {
+    color: $color-primary;
+}
+
+.header {
+    height: 100px;
+    background: #fff;
+}
+
+.main {
+    background: #000;
+    height: 100%;
+}
