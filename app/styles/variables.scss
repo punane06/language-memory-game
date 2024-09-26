@@ -1,4 +1,4 @@
-$color-primary: blue;
+$color-primary: rgb(40, 40, 226);
 
 .title {
     color: $color-primary;
@@ -6,7 +6,7 @@ $color-primary: blue;
 
 .header {
     height: 100px;
-    background: #fff;
+    background: $color-primary;
 }
 
 .main {
