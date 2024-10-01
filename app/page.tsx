@@ -23,13 +23,9 @@ export default function Home() {
       <h1 className="title">Language Memory Game</h1>
       <LanguagePick onChange={handleLanguageChange} />
       <p>Currently selected language: {selectedLanguage}</p>
-      <Button
+      
 
-        onlyIcon={<ArrowDownIcon width={18} height={18}
-        />}
-      >
-      </Button>
-      <Language />
+      
       <GameBoard />
     </main>
   );
