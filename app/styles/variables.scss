@@ -1,4 +1,4 @@
-$color-primary: lightblue;
+$color-primary: #FFB400;
 
 .title {
     color: $color-primary;
@@ -12,4 +12,53 @@ $color-primary: lightblue;
 .main {
     background: #000;
     height: 100%;
+}
+
+
+//Button
+.button {
+    background: $color-primary;
+    display: flex;
+    align-items: center;
+    color: #000;
+    font-size: 18px;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    
+    &.button-only-icon {
+        padding: 10px;
+    }
+}
+
+.button-icon-right {
+    margin-bottom: -4px;
+    margin-left: 10px;
+}
+
+.button-icon-left {
+    margin-bottom: -4px;
+    margin-right: 10px;
+}
+
+.button-only-icon {
+    margin-bottom: -4px;
+}
+
+
+//DropDown
+
+.react-select-container {
+    width: fit-content;
+    
+    .selector-notFocused {
+        background: #683838;
+    }
+    
+    .selector-isFocused {
+        background: #d6a3a3;
+    }
+    .react-select__dropdown-indicators {
+        color: yellow;
+    }
 }
