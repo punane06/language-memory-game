@@ -2,16 +2,17 @@ import React, { useState } from 'react'
 import Card from './Card'
 import Words from '../api/words.json'
 
-const GameBoard = () => {
-
-    console.log(Words[0])
+interface GameBoardProps {
+    onCardClick: () => void;
+}
+const GameBoard : React.FC <GameBoardProps> = ({onCardClick}) => {
     return (
         <div className='game-board'>
             <h1>
                 GameBoard
             </h1>
-            <Card />
-
+            <Card onCardClick={onCardClick}/>
+            
         </div>
     )
 }

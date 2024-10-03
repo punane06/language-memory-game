@@ -3,7 +3,12 @@ import LanguagePick from "./LanguagePick";
 import Button from './Button';
 import ArrowDownIcon from './icons/ArrowLeftIcon';
 
-const Header = ({ onLanguageChange }: { onLanguageChange: (language: string) => void }) => {
+interface HeaderProps {
+  onLanguageChange: (language: string) => void;
+  timeElapsed: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ timeElapsed, onLanguageChange }) => {
   return (
     <header className="header">
       <h1 className="header-title">FIND THE PAIRS</h1>
@@ -13,18 +18,12 @@ const Header = ({ onLanguageChange }: { onLanguageChange: (language: string) => 
           <LanguagePick onChange={onLanguageChange} />
         </div>
         <div className="header-actions">
-          <Button
-            title='00:20' >
-          </Button>
-          <Button
-            onlyIcon={<ArrowDownIcon width={18} height={18} />}>
-          </Button>
+          <Button title={`${timeElapsed}`} />
+          <Button onlyIcon={<ArrowDownIcon width={18} height={18} />} />
         </div>
       </div>
     </header>
   );
 };
-
-
 
 export default Header

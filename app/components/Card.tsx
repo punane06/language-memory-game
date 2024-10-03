@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 
-const Card = () => {
+interface CardProps {
+  onCardClick: () => void; 
+}
+
+const Card: React.FC<CardProps> = ({ onCardClick }) => {
   const [cardOpen, setCardOpen] = useState(false);
 
   const handleCardClick = () => {
-    setCardOpen(!cardOpen)
-  }
+    setCardOpen(!cardOpen);
+    onCardClick();
+  };
 
   return (
     <button onClick={handleCardClick} className={`card ${cardOpen ? 'card-open' : 'card-close'}`}>

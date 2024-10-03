@@ -6,32 +6,32 @@ $bg-color: #0D1225;
 }
 
 .main {
-    background: #000;
+    background: $bg-color;
     width: 100vw;
     height: 100vh;
 }
 
 //Header
 .header {
-    background-color: $bg-color ;
     color: $color-primary ;
-    padding: 20px;
-    width: 100%;
+    padding-top: 20px;
+    max-width: 850px;
+    margin: 0 auto;
 
 }
 
 .header-title {
     color: $color-primary;
     font-size: 3rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 .header-actions-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .header-language {
@@ -40,9 +40,8 @@ $bg-color: #0D1225;
 
 .header-actions {
     display: flex;
-    justify-content: flex-end;
+    margin-left: auto;
     align-items: center;
-    width: 100%;
     gap: 15px;
 }
 
