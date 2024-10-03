@@ -1,39 +1,86 @@
-{
-    "1": {
+[
+    {
+        "id": 1,
         "eng": "Hello",
         "est": "Tere",
         "deu": "Hallo",
         "esp": "Hola"
     },
-    "2": {
+    {
+        "id": 2,
         "eng": "Goodbye",
         "est": "Nägemist",
         "deu": "Auf Wiedersehen",
         "esp": "Adiós"
     },
-    "3": {
+    {
+        "id": 3,
         "eng": "Please",
         "est": "Palun",
         "deu": "Bitte",
         "esp": "Por favor"
     },
-    "4": {
+    {
+        "id": 4,
         "eng": "Yes",
         "est": "Jah",
         "deu": "Ja",
         "esp": "Sí"
     },
-    "5": {
+    {
+        "id": 5,
         "eng": "No",
         "est": "Ei",
         "deu": "Nein",
         "esp": "No"
     },
-    "6": {
+    {
+        "id": 6,
+        "eng": "Flower",
+        "est": "Lill",
+        "deu": "Blume",
+        "esp": "Flor"
+    },
+    {
+        "id": 7,
+        "eng": "Hello",
+        "est": "Tere",
+        "deu": "Hallo",
+        "esp": "Hola"
+    },
+    {
+        "id": 8,
+        "eng": "Goodbye",
+        "est": "Nägemist",
+        "deu": "Auf Wiedersehen",
+        "esp": "Adiós"
+    },
+    {
+        "id": 9,
+        "eng": "Please",
+        "est": "Palun",
+        "deu": "Bitte",
+        "esp": "Por favor"
+    },
+    {
+        "id": 10,
+        "eng": "Yes",
+        "est": "Jah",
+        "deu": "Ja",
+        "esp": "Sí"
+    },
+    {
+        "id": 11,
+        "eng": "No",
+        "est": "Ei",
+        "deu": "Nein",
+        "esp": "No"
+    },
+    {
+        "id": 12,
         "eng": "Flower",
         "est": "Lill",
         "deu": "Blume",
         "esp": "Flor"
     }
-
-}
+]
