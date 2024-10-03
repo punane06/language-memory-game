@@ -16,9 +16,8 @@ export default function Home() {
 
   return (
     <main className="main">
-      <Header />
+      <Header onLanguageChange={handleLanguageChange}/>
       <h1 className="title">Language Memory Game</h1>
-      <LanguagePick onChange={handleLanguageChange} />
       <p>Currently selected language: {selectedLanguage}</p>
       
 

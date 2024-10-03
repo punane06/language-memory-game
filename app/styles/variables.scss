@@ -1,30 +1,38 @@
-$color-primary: #E7A629;
+$color-primary: #E8B144;
+$bg-color:#0D1225;
 
 .title {
     color: $color-primary;
 }
+.main {
+    background: #000;
+    width: 100vw;
+    height: 100vh;
+}
 
 //Header
 .header {
-    background-color:#0D1225 ;
-    color:#FFB400 ;
+    background-color:$bg-color ;
+    color:$color-primary ;
     padding: 20px;
-    height: 150px;
+    width:100%;
    
 }
-.header-container{
+.header-title {
+    color: $color-primary;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+.header-actions-container{
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 
 }
-.header-title {
-    color: #FFB400;
-    font-size: 50px;
-    margin: 0;
-    padding-bottom: 10px;
-    text-align: center;
-  }
+.header-language{
+    justify-content: flex-start  ;
+}
 
   .header-actions {
     display: flex;
@@ -32,14 +40,7 @@ $color-primary: #E7A629;
     align-items: center;
     width: 100%;
     gap: 15px;
-    padding-bottom: 10px;
   }
-
-
-.main {
-    background: #000;
-    height: 600px;
-}
 
 
 //Button
@@ -76,17 +77,20 @@ $color-primary: #E7A629;
 //DropDown
 
 .react-select-container {
-    width: fit-content;
+    width:fit-content;
+    color: #000000;
+    font-size: 18px;
 
     .react-select__control {
-        background-color: #FFB400;
+        background-color: $color-primary;
         color: #000000;
         border: none;
         border-radius: 25px;
+        min-height: 38px;
     }
 
     .react-select__menu {
-        background-color: #FFB400;
+        background-color: $color-primary;
         border-radius: 25px;
         margin-top: 20px;
     }
@@ -97,7 +101,7 @@ $color-primary: #E7A629;
     }
 
     .react-select__option--is-selected {
-        background-color: #FFB400 !important;
+        background-color: $color-primary !important;
         color: #58607D;
         border-radius: 25px;
     }
