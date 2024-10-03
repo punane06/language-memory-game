@@ -1,4 +1,4 @@
-const ArrowDownIcon = ({
+const ArrowLeftIcon = ({
     height = '32px',
     width = '32px',
     fill = 'currentColor',
@@ -24,4 +24,4 @@ const ArrowDownIcon = ({
   </svg>
 )
 
-export default ArrowDownIcon
+export default ArrowLeftIcon

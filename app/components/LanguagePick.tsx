@@ -6,9 +6,9 @@ interface LanguageSelectorProps {
     onChange: (language: string) => void;
   }
   const languageOptions = [
-    { value: 'English-Estonian', label: 'English-Estonian' },
-    { value: 'English-Spanish', label: 'English-Spanish' },
-    { value: 'English-French', label: 'English-French' },
+    { value: 'English-Estonian', label: 'English - Estonian' },
+    { value: 'English-Spanish', label: 'English - Spanish' },
+    { value: 'English-German', label: 'English - German' },
     // Add more languages as needed
   ];
 

@@ -3,11 +3,10 @@ import Card from './Card'
 
 const GameBoard = () => {
     return (
-        <div>
+        <div className='game-board'>
             <h1>
                 GameBoard
             </h1>
-            <Card />
             <Card />
         </div>
     )

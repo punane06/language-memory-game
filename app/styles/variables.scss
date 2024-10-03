@@ -1,4 +1,4 @@
-$color-primary: #FFB400;
+$color-primary: #E7A629;
 
 .title {
     color: $color-primary;
@@ -109,4 +109,28 @@ $color-primary: #FFB400;
     .react-select__indicator-separator {
         display: none;
     }
+}
+
+//GameBoard
+.game-board {
+    background: #514848;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+}
+
+// Card
+.card {
+    background: $color-primary;
+    width: 100%;
+    max-width: 224px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    padding: 10px;
+    height: 130px;
 }

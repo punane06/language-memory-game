@@ -1,7 +1,7 @@
 import React from 'react'
 import LanguagePick from "./LanguagePick";
 import Button from './Button';
-import ArrowDownIcon from './icons/ArrowDownIcon';
+import ArrowDownIcon from './icons/ArrowLeftIcon';
 
 const Header = () => {
   return (

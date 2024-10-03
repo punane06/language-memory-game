@@ -2,10 +2,7 @@
 import Header from "./components/Header";
 import GameBoard from "./components/GameBoard";
 import LanguagePick from "./components/LanguagePick";
-import Button from "./components/Button";
-import ArrowDownIcon from "./components/icons/ArrowDownIcon";
 import { useState } from "react";
-import Language from "./components/Language";
 
 
 export default function Home() {
