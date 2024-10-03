@@ -4,7 +4,7 @@ import Words from '../api/words.json'
 
 const GameBoard = () => {
 
-    console.log(Words)
+    console.log(Words[0])
     return (
         <div className='game-board'>
             <h1>
