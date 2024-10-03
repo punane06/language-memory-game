@@ -8,6 +8,7 @@ const GameBoard = () => {
                 GameBoard
             </h1>
             <Card />
+            
         </div>
     )
 }

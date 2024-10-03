@@ -1,9 +1,10 @@
 $color-primary: #E8B144;
-$bg-color:#0D1225;
+$bg-color: #0D1225;
 
 .title {
     color: $color-primary;
 }
+
 .main {
     background: #000;
     width: 100vw;
@@ -12,35 +13,38 @@ $bg-color:#0D1225;
 
 //Header
 .header {
-    background-color:$bg-color ;
-    color:$color-primary ;
+    background-color: $bg-color ;
+    color: $color-primary ;
     padding: 20px;
-    width:100%;
-   
+    width: 100%;
+
 }
+
 .header-title {
     color: $color-primary;
     font-size: 3rem;
     margin-bottom: 10px;
     text-align: center;
-  }
-.header-actions-container{
+}
+
+.header-actions-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
 }
-.header-language{
-    justify-content: flex-start  ;
+
+.header-language {
+    justify-content: flex-start;
 }
 
-  .header-actions {
+.header-actions {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
     gap: 15px;
-  }
+}
 
 
 //Button
@@ -77,7 +81,7 @@ $bg-color:#0D1225;
 //DropDown
 
 .react-select-container {
-    width:fit-content;
+    width: fit-content;
     color: #000000;
     font-size: 18px;
 
@@ -127,8 +131,15 @@ $bg-color:#0D1225;
 }
 
 // Card
-.card {
+.card-open {
+    background: #E7DBC5;
+}
+
+.card-close {
     background: $color-primary;
+}
+
+.card {
     width: 100%;
     max-width: 224px;
     display: flex;
@@ -137,4 +148,9 @@ $bg-color:#0D1225;
     border-radius: 25px;
     padding: 10px;
     height: 130px;
+    border: none;
+}
+
+.card-text {
+    color: #000;
 }

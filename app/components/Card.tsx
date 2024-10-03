@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Card = () => {
+  const [cardOpen, setCardOpen] = useState(false);
+
+  const handleCardClick = () => {
+    setCardOpen(!cardOpen)
+  }
+
   return (
-    <div className='card'>Card</div>
+    <button onClick={handleCardClick} className={`card ${cardOpen ? 'card-open' : 'card-close'}`}>
+      {cardOpen && <h2 className='card-text'>Entchuldigen</h2>}
+    </button>
   )
 }
 
