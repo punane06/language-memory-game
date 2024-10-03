@@ -4,6 +4,7 @@ import GameBoard from "./components/GameBoard";
 import LanguagePick from "./components/LanguagePick";
 import { useState } from "react";
 import Timer from "./components/Timer";
+import Card from "./components/Card"; 
 
 export default function Home() {
   const [selectedLanguage, setSelectedLanguage] = useState<string>('English-Estonian');
@@ -16,6 +17,7 @@ export default function Home() {
     setSelectedLanguage(language);
     console.log('Selected language:', language);
   }
+
   const handleCardClick = () => {
     if (!isTimerActive) {
       setIsTimerActive(true);
@@ -33,9 +35,7 @@ export default function Home() {
     setIsTimerActive(false);
     setMatchesFound(0);
     setTimeElapsed('00:00');
-
   };
-
 
   return (
     <main className="Main">
@@ -47,7 +47,9 @@ export default function Home() {
         <Timer
           isActive={isTimerActive} onTimeUpdate={setTimeElapsed}
         />
-        <GameBoard />
+       
+        <GameBoard onCardClick={handleCardClick} />
+        <Card onCardClick={handleCardClick} /> 
       </div>
     </main>
   );

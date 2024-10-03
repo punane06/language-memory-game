@@ -1,13 +1,16 @@
 import React from 'react'
 import Card from './Card'
 
-const GameBoard = () => {
+interface GameBoardProps {
+    onCardClick: () => void;
+}
+const GameBoard : React.FC <GameBoardProps> = ({onCardClick}) => {
     return (
         <div className='game-board'>
             <h1>
                 GameBoard
             </h1>
-            <Card />
+            <Card onCardClick={onCardClick}/>
             
         </div>
     )
