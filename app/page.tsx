@@ -1,10 +1,8 @@
 'use client'
 import Header from "./components/Header";
 import GameBoard from "./components/GameBoard";
-import LanguagePick from "./components/LanguagePick";
 import { useState } from "react";
 import Timer from "./components/Timer";
-import Card from "./components/Card"; 
 
 export default function Home() {
   const [selectedLanguage, setSelectedLanguage] = useState<string>('English-Estonian');
@@ -49,7 +47,6 @@ export default function Home() {
         />
        
         <GameBoard onCardClick={handleCardClick} />
-        <Card onCardClick={handleCardClick} /> 
       </div>
     </main>
   );

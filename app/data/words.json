@@ -82,5 +82,47 @@
         "est": "Lill",
         "deu": "Blume",
         "esp": "Flor"
+    },
+    {
+        "id": 12,
+        "eng": "Excuse me",
+        "est": "Vabandage",
+        "deu": "Entschuldigen",
+        "esp": "Perdón"
+    },
+    {
+        "id": 13,
+        "eng": "Good",
+        "est": "Hea",
+        "deu": "Gut",
+        "esp": "Bueno"
+    },
+    {
+        "id": 14,
+        "eng": "Bad",
+        "est": "Halb",
+        "deu": "Schlecht",
+        "esp": "Malo"
+    },
+    {
+        "id": 15,
+        "eng": "Love",
+        "est": "Armastus",
+        "deu": "Liebe",
+        "esp": "Amor"
+    },
+    {
+        "id": 16,
+        "eng": "Friend",
+        "est": "Sõber",
+        "deu": "Freund",
+        "esp": "Amigo"
+    },
+    {
+        "id": 17,
+        "eng": "Family",
+        "est": "Pere",
+        "deu": "Familie",
+        "esp": "Familia"
     }
 ]

@@ -126,21 +126,39 @@ $bg-color: #0D1225;
     margin: auto;
     align-items: center;
     max-width: 900px;
+    width: 1026px;
+    height: 652px;
+    padding: 36px;
+    border-radius: 20px;
+}
+
+.game-board-grid {
+    height: 100%;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 // Card
 .card-open {
     background: #E7DBC5;
+    transform-style: preserve-3d;
+    transition: all 0.2s;
+
 }
 
 .card-close {
     background: $color-primary;
+    transform-style: preserve-3d;
+    transition: all 0.2s;
+    transform: rotateY(180deg);
 }
 
 .card {
     width: 100%;
-    max-width: 224px;
+    max-width: 196px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,3 +171,47 @@ $bg-color: #0D1225;
 .card-text {
     color: #000;
 }
+
+
+
+
+
+.card {
+    display: grid;
+    position: relative;
+    place-items: center;
+    width: 80px;
+    height: 80px;
+    background-color: hsl(var(--bkg));
+    user-select: none;
+    border: 2px solid hsl(var(--accent));
+    box-shadow: 0 0 0 hsl(var(--accent) / .2),
+                0 0 0 -.3rem hsl(var(--bkg)),
+                0 0 0 -.6rem hsl(var(--accent));
+    transition: transform 600ms ease;
+  }
+  
+  [disabled], .card.matched {
+    opacity: .2;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  
+  .side {
+    pointer-events: none;
+    position: absolute;
+  }
+  
+  :is(.card.matched, .card.flipped, :focus) .back {
+    transform: rotateY(0deg);
+  }
+  
+  :is(.card.matched, .card.flipped, :focus) .front {
+    transform: rotateY(90deg);
+  }
+  
+  .back {
+    transform: rotateY(90deg);
+    font-size: 3rem;
+  }
+  
