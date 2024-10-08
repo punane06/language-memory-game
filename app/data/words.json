@@ -124,5 +124,271 @@
         "est": "Pere",
         "deu": "Familie",
         "esp": "Familia"
+    },
+    {
+        "id": 18,
+        "eng": "Food",
+        "est": "Toit",
+        "deu": "Essen",
+        "esp": "Comida"
+    },
+    {
+        "id": 19,
+        "eng": "Water",
+        "est": "Vesi",
+        "deu": "Wasser",
+        "esp": "Agua"
+    },
+    {
+        "id": 20,
+        "eng": "House",
+        "est": "Maja",
+        "deu": "Haus",
+        "esp": "Casa"
+    },
+    {
+        "id": 21,
+        "eng": "School",
+        "est": "Kool",
+        "deu": "Schule",
+        "esp": "Escuela"
+    },
+    {
+        "id": 22,
+        "eng": "Book",
+        "est": "Raamat",
+        "deu": "Buch",
+        "esp": "Libro"
+    },
+    {
+        "id": 23,
+        "eng": "Pen",
+        "est": "Pliiats",
+        "deu": "Stift",
+        "esp": "Pluma"
+    },
+    {
+        "id": 24,
+        "eng": "Paper",
+        "est": "Paber",
+        "deu": "Papier",
+        "esp": "Papel"
+    },
+    {
+        "id": 25,
+        "eng": "Happy",
+        "est": "Õnnelik",
+        "deu": "Glücklich",
+        "esp": "Feliz"
+    },
+    {
+        "id": 26,
+        "eng": "Sad",
+        "est": "Kurb",
+        "deu": "Traurig",
+        "esp": "Triste"
+    },
+    {
+        "id": 27,
+        "eng": "Big",
+        "est": "Suur",
+        "deu": "Groß",
+        "esp": "Grande"
+    },
+    {
+        "id": 28,
+        "eng": "Small",
+        "est": "Väike",
+        "deu": "Klein",
+        "esp": "Pequeño"
+    },
+    {
+        "id": 29,
+        "eng": "Beautiful",
+        "est": "Ilus",
+        "deu": "Schön",
+        "esp": "Hermoso"
+    },
+    {
+        "id": 30,
+        "eng": "Ugly",
+        "est": "Inetu",
+        "deu": "Hässlich",
+        "esp": "Feo"
+    },
+    {
+        "id": 31,
+        "eng": "Strong",
+        "est": "Tugev",
+        "deu": "Stark",
+        "esp": "Fuerte"
+    },
+    {
+        "id": 32,
+        "eng": "Weak",
+        "est": "Nõrk",
+        "deu": "Schwach",
+        "esp": "Débil"
+    },
+    {
+        "id": 33,
+        "eng": "Work",
+        "est": "Töö",
+        "deu": "Arbeit",
+        "esp": "Trabajo"
+    },
+    {
+        "id": 34,
+        "eng": "Game",
+        "est": "Mäng",
+        "deu": "Spiel",
+        "esp": "Juego"
+    },
+    {
+        "id": 35,
+        "eng": "Music",
+        "est": "Muusika",
+        "deu": "Musik",
+        "esp": "Música"
+    },
+    {
+        "id": 36,
+        "eng": "Color",
+        "est": "Värv",
+        "deu": "Farbe",
+        "esp": "Color"
+    },
+    {
+        "id": 37,
+        "eng": "City",
+        "est": "Linn",
+        "deu": "Stadt",
+        "esp": "Ciudad"
+    },
+    {
+        "id": 38,
+        "eng": "Country",
+        "est": "Riik",
+        "deu": "Land",
+        "esp": "País"
+    },
+    {
+        "id": 39,
+        "eng": "Language",
+        "est": "Keel",
+        "deu": "Sprache",
+        "esp": "Idioma"
+    },
+    {
+        "id": 40,
+        "eng": "Dog",
+        "est": "Koer",
+        "deu": "Hund",
+        "esp": "Perro"
+    },
+    {
+        "id": 41,
+        "eng": "Cat",
+        "est": "Kass",
+        "deu": "Katze",
+        "esp": "Gato"
+    },
+    {
+        "id": 42,
+        "eng": "Bird",
+        "est": "Lind",
+        "deu": "Vogel",
+        "esp": "Pájaro"
+    },
+    {
+        "id": 43,
+        "eng": "Chair",
+        "est": "Tool",
+        "deu": "Stuhl",
+        "esp": "Silla"
+    },
+    {
+        "id": 44,
+        "eng": "Table",
+        "est": "Laud",
+        "deu": "Tisch",
+        "esp": "Mesa"
+    },
+    {
+        "id": 45,
+        "eng": "Bed",
+        "est": "Voodi",
+        "deu": "Bett",
+        "esp": "Cama"
+    },
+    {
+        "id": 46,
+        "eng": "Shoe",
+        "est": "King",
+        "deu": "Schuh",
+        "esp": "Zapato"
+    },
+    {
+        "id": 47,
+        "eng": "Shirt",
+        "est": "Särk",
+        "deu": "Hemd",
+        "esp": "Camisa"
+    },
+    {
+        "id": 48,
+        "eng": "Pants",
+        "est": "Püksid",
+        "deu": "Hose",
+        "esp": "Pantalones"
+    },
+    {
+        "id": 49,
+        "eng": "Road",
+        "est": "Tee",
+        "deu": "Straße",
+        "esp": "Camino"
+    },
+    {
+        "id": 50,
+        "eng": "Sun",
+        "est": "Päike",
+        "deu": "Sonne",
+        "esp": "Sol"
+    },
+    {
+        "id": 51,
+        "eng": "Moon",
+        "est": "Kuu",
+        "deu": "Mond",
+        "esp": "Luna"
+    },
+    {
+        "id": 52,
+        "eng": "Star",
+        "est": "Täht",
+        "deu": "Stern",
+        "esp": "Estrella"
+    },
+    {
+        "id": 53,
+        "eng": "Dream",
+        "est": "Unenägu",
+        "deu": "Traum",
+        "esp": "Sueño"
+    },
+    {
+        "id": 54,
+        "eng": "Gift",
+        "est": "Kingitus",
+        "deu": "Geschenk",
+        "esp": "Regalo"
+    },
+    {
+        "id": 55,
+        "eng": "Problem",
+        "est": "Probleem",
+        "deu": "Problem",
+        "esp": "Problema"
     }
 ]
