@@ -1,6 +1,9 @@
 'use client'
 import React from 'react'
-import Select from 'react-select';
+/* import Select from 'react-select'; */
+import dynamic from 'next/dynamic';
+
+const SelectWithoutSSR = dynamic(() => import('react-select'), { ssr: false });
 
 interface LanguageSelectorProps {
     onChange: (language: string) => void;
@@ -20,7 +23,7 @@ interface LanguageSelectorProps {
     
     return (
       <div className="language-selector">
-        <Select
+        <SelectWithoutSSR
           options={languageOptions}
           onChange={handleChange}
           defaultValue={languageOptions[0]}

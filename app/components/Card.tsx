@@ -1,33 +1,22 @@
 import React, { useState } from 'react'
 
 interface CardProps {
-  onCardClick: () => void;
-  cardText?: [{
-    id: Number,
-    eng: string,
-    est: string,
-    deu: string,
-    esp: string,
-  }
-  ];
-  id: Number,
-  eng: string,
-  est?: string,
-  deu?: string,
-  esp?: string,
+  onCardClick: any;
+  id?: Number,
+  text: string,
 }
 
-const Card: React.FC<CardProps> = ({ onCardClick, cardText, id, eng, est, deu, esp }) => {
+const Card: React.FC<CardProps> = ({ onCardClick, id, text }) => {
   const [cardOpen, setCardOpen] = useState(false);
 
-  const handleCardClick = () => {
+  /* const handleCardClick = () => {
     setCardOpen(!cardOpen);
     onCardClick();
-  };
+  }; */
 
   return (
-    <button onClick={handleCardClick} className={`card ${cardOpen ? 'card-open' : 'card-close'}`}>
-      {cardOpen && <h2 className='card-text'>{eng}</h2>}
+    <button onClick={() => onCardClick()} className={`card ${text ? 'card-open' : 'card-close'}`}>
+      {text && <h2 className='card-text'>{text}</h2>}
     </button>
   )
 }
