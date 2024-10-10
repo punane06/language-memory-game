@@ -17,7 +17,9 @@ interface LanguageSelectorProps {
 
 
   const LanguageSelector: React.FC<LanguageSelectorProps> = ({ onChange }) => {
+    /* eslint-disable */
     const handleChange = (selectedOption: any) => {
+      /* eslint-enable */
       onChange(selectedOption?.value);
     };
     

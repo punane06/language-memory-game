@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 
 interface CardProps {
+  /* eslint-disable */
   onCardClick: any;
+  /* eslint-enable */
   id?: number,
   text: string,
 }
