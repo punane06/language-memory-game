@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 interface CardProps {
   onCardClick: any;
-  id?: Number,
+  id?: number,
   text: string,
 }
 
