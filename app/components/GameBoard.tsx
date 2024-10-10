@@ -51,6 +51,7 @@ const GameBoard: React.FC<GameBoardProps> = ({ onCardClick }) => {
             /* resetCards(); */
         }
     }, [cardsData])
+    console.log(resetCards)
 
     const handleCardClick = (index: number) => {
         onCardClick()

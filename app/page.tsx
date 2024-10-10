@@ -16,25 +16,27 @@ export default function Home() {
     console.log('Selected language:', language);
   }
 
+  
   const handleCardClick = () => {
     if (!isTimerActive) {
       setIsTimerActive(true);
     }
   };
-
+  
   const handleMatchFound = () => {
     setMatchesFound((prev) => prev + 1);
     if (matchesFound + 1 === totalMatches) {
       setIsTimerActive(false); // Stop timer when all matches found
     }
   };
-
+  
   const handleGameReset = () => {
     setIsTimerActive(false);
     setMatchesFound(0);
     setTimeElapsed('00:00');
   };
-
+  console.log(selectedLanguage,handleMatchFound,handleGameReset)
+  
   return (
     <main className="Main">
       <div>
