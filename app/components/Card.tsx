@@ -15,7 +15,7 @@ const Card: React.FC<CardProps> = ({ onCardClick, id, text }) => {
     setCardOpen(!cardOpen);
     onCardClick();
   };
-  console.log(id, handleCardClick)
+  /* console.log(id, handleCardClick) */
 
   return (
     <button onClick={() => onCardClick()} className={`card ${text ? 'card-open' : 'card-close'}`}>

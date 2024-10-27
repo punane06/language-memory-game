@@ -13,7 +13,7 @@ export default function Home() {
 
   const handleLanguageChange = (language: string) => {
     setSelectedLanguage(language);
-    console.log('Selected language:', language);
+    /* console.log('Selected language:', language); */
   }
 
   
@@ -35,7 +35,7 @@ export default function Home() {
     setMatchesFound(0);
     setTimeElapsed('00:00');
   };
-  console.log(selectedLanguage,handleMatchFound,handleGameReset)
+  /* console.log(selectedLanguage,handleMatchFound,handleGameReset) */
   
   return (
     <main className="Main">
@@ -48,7 +48,7 @@ export default function Home() {
           isActive={isTimerActive} onTimeUpdate={setTimeElapsed}
         />
        
-        <GameBoard onCardClick={handleCardClick} />
+        <GameBoard onCardClick={handleCardClick} selectedLanguage={selectedLanguage} />
       </div>
     </main>
   );

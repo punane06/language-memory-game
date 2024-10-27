@@ -11,14 +11,18 @@ interface CardItem {
 
 interface GameBoardProps {
     onCardClick: () => void;
+    selectedLanguage: string;
 }
-const GameBoard: React.FC<GameBoardProps> = ({ onCardClick }) => {
+const GameBoard: React.FC<GameBoardProps> = ({ onCardClick, selectedLanguage }) => {
     const [cardsData, setCardsData] = useState<CardItem[]>([])
     /* const [boardData, setBoardData] = useState<CardItem[]>([]) */
     const [openCards, setOpenCards] = useState<number[]>([]);
     const [matchedPairs, setMatchedPairs] = useState<number>(0);
     const [win, setWin] = useState(false);
 
+    const secondLanguage = selectedLanguage.split('-')[1]
+
+   /*  console.log('secondLAnf' + secondLanguage) */
     const getRandomCards = () => {
         const randomCards = [...cardsItems]
             .sort(() => Math.random() - .5)
@@ -51,7 +55,7 @@ const GameBoard: React.FC<GameBoardProps> = ({ onCardClick }) => {
             /* resetCards(); */
         }
     }, [cardsData])
-    console.log(resetCards)
+    /* console.log(resetCards) */
 
     const handleCardClick = (index: number) => {
         onCardClick()
