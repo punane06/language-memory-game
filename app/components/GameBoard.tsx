@@ -11,9 +11,9 @@ interface CardItem {
 
 interface GameBoardProps {
     onCardClick: () => void;
-    selectedLanguage: string;
+    /* selectedLanguage: string; */
 }
-const GameBoard: React.FC<GameBoardProps> = ({ onCardClick, selectedLanguage }) => {
+const GameBoard: React.FC<GameBoardProps> = ({ onCardClick }) => {
     const [cardsData, setCardsData] = useState<CardItem[]>([])
     const [openCards, setOpenCards] = useState<number[]>([]);
     const [matchedPairs, setMatchedPairs] = useState<number>(0);
