@@ -4,17 +4,16 @@ interface CardProps {
   /* eslint-disable */
   onCardClick: any;
   /* eslint-enable */
-  id?: number,
   text: string,
 }
 
-const Card: React.FC<CardProps> = ({ onCardClick, id, text }) => {
-  const [cardOpen, setCardOpen] = useState(false);
+const Card: React.FC<CardProps> = ({ onCardClick, text }) => {
+  /* const [cardOpen, setCardOpen] = useState(false); */
 
-  const handleCardClick = () => {
+ /*  const handleCardClick = () => {
     setCardOpen(!cardOpen);
     onCardClick();
-  };
+  }; */
   /* console.log(id, handleCardClick) */
 
   return (

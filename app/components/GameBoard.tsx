@@ -19,7 +19,7 @@ const GameBoard: React.FC<GameBoardProps> = ({ onCardClick, selectedLanguage }) 
     const [matchedPairs, setMatchedPairs] = useState<number>(0);
     const [win, setWin] = useState(false);
 
-    const secondLanguage = selectedLanguage.split('-')[1]
+/*     const secondLanguage = selectedLanguage.split('-')[1] */
 
     const getRandomCards = (() => {
         const randomCards = [...cardsItems]
@@ -36,11 +36,11 @@ const GameBoard: React.FC<GameBoardProps> = ({ onCardClick, selectedLanguage }) 
 
 
 
-    const resetCards = () => {
+    /* const resetCards = () => {
         const shuffled = [...cardsData]
             .sort(() => Math.random() - .5)
         setCardsData(shuffled)
-    }
+    } */
 
    /*  useEffect(() => {
         getRandomCards();
