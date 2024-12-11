@@ -7,7 +7,7 @@ import { useGameState } from "./hooks/useGameState";
 export default function Home() {
   const {
     gameState: {
-      selectedLanguage,
+      /* selectedLanguage, */
       isTimerActive,
       timeElapsed,
     },
@@ -29,7 +29,7 @@ export default function Home() {
         />
         <GameBoard 
           onCardClick={handleCardClick} 
-          selectedLanguage={selectedLanguage} 
+          /* selectedLanguage={selectedLanguage}  */
         />
       </div>
     </main>
