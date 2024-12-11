@@ -2,19 +2,15 @@
 import Header from "./components/Header";
 import GameBoard from "./components/GameBoard";
 import Timer from "./components/Timer";
-import { useGameState } from "./hooks/useGameState";
+import { useGameStore } from "./store/gameStore";
 
 export default function Home() {
   const {
-    gameState: {
-      /* selectedLanguage, */
-      isTimerActive,
-      timeElapsed,
-    },
-    handleLanguageChange,
-    handleCardClick,
+    isTimerActive,
+    timeElapsed,
     setTimeElapsed,
-  } = useGameState();
+    handleLanguageChange
+  } = useGameStore();
 
   return (
     <main className="Main">
@@ -27,10 +23,7 @@ export default function Home() {
           isActive={isTimerActive}
           onTimeUpdate={setTimeElapsed}
         />
-        <GameBoard 
-          onCardClick={handleCardClick} 
-          /* selectedLanguage={selectedLanguage}  */
-        />
+        <GameBoard />
       </div>
     </main>
   );

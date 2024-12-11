@@ -1,26 +1,28 @@
-import React/* , { useState } */ from 'react'
+'use client'
+import React from 'react'
 
 interface CardProps {
-  /* eslint-disable */
-  onCardClick: any;
-  /* eslint-enable */
-  text: string,
+  text: string;
+  onCardClick: () => void;
+  isFlipped: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ onCardClick, text }) => {
-  /* const [cardOpen, setCardOpen] = useState(false); */
-
- /*  const handleCardClick = () => {
-    setCardOpen(!cardOpen);
-    onCardClick();
-  }; */
-  /* console.log(id, handleCardClick) */
-
+const Card: React.FC<CardProps> = ({ onCardClick, text, isFlipped }) => {
   return (
-    <button onClick={() => onCardClick()} className={`card ${text ? 'card-open' : 'card-close'}`}>
-      {text && <h2 className='card-text'>{text}</h2>}
-    </button>
-  )
-}
+    <div 
+      className={`card ${isFlipped ? 'flipped' : ''}`} 
+      onClick={onCardClick}
+    >
+      <div className="card-inner">
+        <div className="card-front">
+          ?
+        </div>
+        <div className="card-back">
+          {text}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Card
