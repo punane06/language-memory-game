@@ -2,28 +2,29 @@
 import Header from "./components/Header";
 import GameBoard from "./components/GameBoard";
 import Timer from "./components/Timer";
+import WinMessage from './components/WinMessage';
 import { useGameStore } from "./store/gameStore";
 
 export default function Home() {
   const {
     isTimerActive,
-    timeElapsed,
     setTimeElapsed,
-    handleLanguageChange
-  } = useGameStore();
+  } = useGameStore(state => ({
+    isTimerActive: state.isTimerActive,
+    setTimeElapsed: state.setTimeElapsed,
+  }));
+
+  console.log('Home component rendered');
+  console.log('isTimerActive:', isTimerActive);
 
   return (
     <main className="Main">
       <div>
-        <Header
-          timeElapsed={timeElapsed}
-          onLanguageChange={handleLanguageChange}
-        />
-        <Timer
-          isActive={isTimerActive}
-          onTimeUpdate={setTimeElapsed}
-        />
-        <GameBoard />
+        <h1>Application is Loading...</h1>
+        <Header onLanguageChange={function (language: string): void {
+          throw new Error("Function not implemented.");
+        } } timeElapsed={""} />
+
       </div>
     </main>
   );
