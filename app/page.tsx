@@ -2,7 +2,6 @@
 import Header from "./components/Header";
 import GameBoard from "./components/GameBoard";
 import Timer from "./components/Timer";
-import WinMessage from './components/WinMessage';
 import { useGameStore } from "./store/gameStore";
 
 export default function Home() {
