@@ -1,8 +1,6 @@
 'use client'
 import React from 'react'
 import LanguagePick from "./LanguagePick";
-import Button from './Button';
-import ArrowLeftIcon from './icons/ArrowLeftIcon';
 import { formatTime, useGameStore, type LanguagePair } from '../store/gameStore';
 
 const Header: React.FC = () => {
@@ -11,19 +9,20 @@ const Header: React.FC = () => {
 
   return (
     <header className="header">
-      <h1 className="header-title">FIND THE PAIRS</h1>
+      <h1 className="header-title">Find the pairs</h1>
+      <p className="header-intro">Turn two cards. Find the word and its translation.</p>
 
       <div className='header-actions-container'>
         <div className='header-language'>
           <LanguagePick onChange={(language) => newGame(language as LanguagePair)} />
         </div>
         <div className="header-actions">
-          <Button title={formatTime(seconds)} ariaLabel="Time elapsed" />
-          <Button
-            onlyIcon={<ArrowLeftIcon width={18} height={18} />}
-            ariaLabel="Start a new game"
-            onClick={() => newGame()}
-          />
+          <span className="timer" aria-label={`Time ${formatTime(seconds)}`}>
+            <span aria-hidden="true">⏱</span> {formatTime(seconds)}
+          </span>
+          <button type="button" className="button" onClick={() => newGame()}>
+            New game
+          </button>
         </div>
       </div>
     </header>

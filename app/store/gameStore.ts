@@ -9,11 +9,14 @@ export interface CardItem {
   key: string;
   pairId: number;
   text: string;
+  lang: string;
   flipped: boolean;
   found: boolean;
 }
 
 const PAIRS = 8;
+const LANG_CODE: Record<string, string> = { eng: "en", est: "et", deu: "de", esp: "es" };
+
 const SECOND_LANGUAGE: Record<LanguagePair, keyof Omit<Word, 'id' | 'eng'>> = {
   'English-Estonian': 'est',
   'English-Spanish': 'esp',
@@ -34,8 +37,8 @@ const createCards = (language: LanguagePair): CardItem[] => {
   const picked = shuffle(words as Word[]).slice(0, PAIRS);
   return shuffle(
     picked.flatMap((word) => [
-      { key: `${word.id}-eng`, pairId: word.id, text: word.eng, flipped: false, found: false },
-      { key: `${word.id}-${second}`, pairId: word.id, text: word[second], flipped: false, found: false },
+      { key: `${word.id}-eng`, pairId: word.id, text: word.eng, lang: "en", flipped: false, found: false },
+      { key: `${word.id}-${second}`, pairId: word.id, text: word[second], lang: LANG_CODE[second], flipped: false, found: false },
     ]),
   );
 };
@@ -106,7 +109,7 @@ export const useGameStore = create<GameState>((set, get) => ({
         cards: state.cards.map((c) => (nextOpen.includes(c.key) ? { ...c, flipped: false } : c)),
         openKeys: [],
       }));
-    }, 1000);
+    }, 1300);
   },
 
   tick: () => set((state) => ({ seconds: state.seconds + 1 })),

@@ -26,6 +26,8 @@ interface LanguageSelectorProps {
     return (
       <div className="language-selector">
         <SelectWithoutSSR
+          aria-label="Language pair"
+          isSearchable={false}
           options={languageOptions}
           onChange={handleChange}
           defaultValue={languageOptions[0]}

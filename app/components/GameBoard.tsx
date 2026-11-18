@@ -23,6 +23,7 @@ const GameBoard: React.FC = () => {
                     <Card
                         key={card.key}
                         text={card.text}
+                        lang={card.lang}
                         isOpen={card.flipped || card.found}
                         isFound={card.found}
                         onCardClick={() => flipCard(card.key)}
