@@ -42,48 +42,6 @@
         "esp": "Flor"
     },
     {
-        "id": 6,
-        "eng": "Hello",
-        "est": "Tere",
-        "deu": "Hallo",
-        "esp": "Hola"
-    },
-    {
-        "id": 7,
-        "eng": "Goodbye",
-        "est": "Nägemist",
-        "deu": "Auf Wiedersehen",
-        "esp": "Adiós"
-    },
-    {
-        "id": 8,
-        "eng": "Please",
-        "est": "Palun",
-        "deu": "Bitte",
-        "esp": "Por favor"
-    },
-    {
-        "id": 9,
-        "eng": "Yes",
-        "est": "Jah",
-        "deu": "Ja",
-        "esp": "Sí"
-    },
-    {
-        "id": 10,
-        "eng": "No",
-        "est": "Ei",
-        "deu": "Nein",
-        "esp": "No"
-    },
-    {
-        "id": 11,
-        "eng": "Flower",
-        "est": "Lill",
-        "deu": "Blume",
-        "esp": "Flor"
-    },
-    {
         "id": 12,
         "eng": "Excuse me",
         "est": "Vabandage",

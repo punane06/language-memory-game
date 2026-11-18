@@ -1,30 +1,22 @@
 'use client'
+import { useEffect } from "react";
 import Header from "./components/Header";
 import GameBoard from "./components/GameBoard";
 import Timer from "./components/Timer";
 import { useGameStore } from "./store/gameStore";
 
 export default function Home() {
-  const {
-    isTimerActive,
-    setTimeElapsed,
-  } = useGameStore(state => ({
-    isTimerActive: state.isTimerActive,
-    setTimeElapsed: state.setTimeElapsed,
-  }));
+  const newGame = useGameStore((state) => state.newGame);
 
-  console.log('Home component rendered');
-  console.log('isTimerActive:', isTimerActive);
+  useEffect(() => {
+    newGame();
+  }, [newGame]);
 
   return (
-    <main className="Main">
-      <div>
-        <h1>Application is Loading...</h1>
-        <Header onLanguageChange={function (language: string): void {
-          throw new Error("Function not implemented.");
-        } } timeElapsed={""} />
-
-      </div>
+    <main className="main">
+      <Header />
+      <Timer />
+      <GameBoard />
     </main>
   );
 }

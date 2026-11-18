@@ -4,7 +4,7 @@ import "./styles/globals.scss";
 
 export const metadata: Metadata = {
   title: "Language Memory Game",
-  description: "Greated by Kadi Kerner & Kristina Valk",
+  description: "Created by Kadi Kerner & Kristina Valk",
 };
 
 export default function RootLayout({

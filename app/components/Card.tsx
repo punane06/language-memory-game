@@ -3,25 +3,22 @@ import React from 'react'
 
 interface CardProps {
   text: string;
+  isOpen: boolean;
+  isFound: boolean;
   onCardClick: () => void;
-  isFlipped: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ onCardClick, text, isFlipped }) => {
+const Card: React.FC<CardProps> = ({ text, isOpen, isFound, onCardClick }) => {
   return (
-    <div 
-      className={`card ${isFlipped ? 'flipped' : ''}`} 
+    <button
+      type="button"
+      className={`card ${isOpen ? 'card-open' : 'card-close'} ${isFound ? 'card-found' : ''}`}
       onClick={onCardClick}
+      aria-label={isOpen ? text : 'Hidden card'}
+      disabled={isFound}
     >
-      <div className="card-inner">
-        <div className="card-front">
-          ?
-        </div>
-        <div className="card-back">
-          {text}
-        </div>
-      </div>
-    </div>
+      {isOpen && <span className="card-text">{text}</span>}
+    </button>
   );
 };
 

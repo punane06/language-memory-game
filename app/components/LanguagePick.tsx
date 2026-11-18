@@ -31,7 +31,7 @@ interface LanguageSelectorProps {
           defaultValue={languageOptions[0]}
           className="react-select-container"
           classNames={{
-            control: (state) =>
+            control: (state: { isFocused: boolean }) =>
               state.isFocused ? 'selector-isFocused' : 'selector-notFocused',
           }}
           classNamePrefix="react-select"

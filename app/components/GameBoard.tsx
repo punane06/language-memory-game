@@ -1,55 +1,39 @@
 'use client'
-import React, { useEffect } from 'react'
+import React from 'react'
 import Card from './Card'
-import { useGameStore } from '../store/gameStore'
-
-interface CardItem {
-    id: number;
-    text: string;
-    matched?: boolean;
-}
-
-const cardsItems: CardItem[] = [
-    { id: 1, text: "Card 1" },
-    { id: 2, text: "Card 2" },
-    // Add more cards as needed
-];
+import { TOTAL_PAIRS, formatTime, useGameStore } from '../store/gameStore'
 
 const GameBoard: React.FC = () => {
-    const { 
-        cardsData,
-        openCards,
-        handleCardClick,
-        setCardsData
-    } = useGameStore();
-
-    const getRandomCards = () => {
-        const randomCards = [...cardsItems]
-            .sort(() => Math.random() - .5)
-            .slice(0, 8)
-            .flatMap(card => [
-                { ...card, id: card.id * 2 - 1 },
-                { ...card, id: card.id * 2 }
-            ])
-            .sort(() => Math.random() - .5);
-        
-        setCardsData(randomCards);
-    };
-
-    useEffect(() => {
-        getRandomCards();
-    }, []);
+    const cards = useGameStore((state) => state.cards);
+    const flipCard = useGameStore((state) => state.flipCard);
+    const isWon = useGameStore((state) => state.isWon);
+    const seconds = useGameStore((state) => state.seconds);
+    const matchedPairs = useGameStore((state) => state.matchedPairs);
+    const newGame = useGameStore((state) => state.newGame);
 
     return (
         <div className="game-board">
-            {cardsData.map((card) => (
-                <Card
-                    key={card.id}
-                    text={card.text}
-                    onCardClick={() => handleCardClick(card.id)}
-                    isFlipped={openCards.includes(card.id) || card.matched || false}
-                />
-            ))}
+            <p className="game-board-status" aria-live="polite">
+                {isWon
+                    ? `You found all pairs in ${formatTime(seconds)}!`
+                    : `Pairs found: ${matchedPairs} / ${TOTAL_PAIRS}`}
+            </p>
+            <div className="game-board-grid">
+                {cards.map((card) => (
+                    <Card
+                        key={card.key}
+                        text={card.text}
+                        isOpen={card.flipped || card.found}
+                        isFound={card.found}
+                        onCardClick={() => flipCard(card.key)}
+                    />
+                ))}
+            </div>
+            {isWon && (
+                <button type="button" className="button game-board-again" onClick={() => newGame()}>
+                    Play again
+                </button>
+            )}
         </div>
     )
 }

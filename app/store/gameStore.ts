@@ -1,112 +1,116 @@
 import { create } from 'zustand';
+import words from '../data/words.json';
 
-interface CardItem {
-  id: number;
+export type LanguagePair = 'English-Estonian' | 'English-Spanish' | 'English-German';
+
+type Word = { id: number; eng: string; est: string; deu: string; esp: string };
+
+export interface CardItem {
+  key: string;
+  pairId: number;
   text: string;
-  matched?: boolean;
+  flipped: boolean;
+  found: boolean;
 }
+
+const PAIRS = 8;
+const SECOND_LANGUAGE: Record<LanguagePair, keyof Omit<Word, 'id' | 'eng'>> = {
+  'English-Estonian': 'est',
+  'English-Spanish': 'esp',
+  'English-German': 'deu',
+};
+
+const shuffle = <T,>(items: T[]): T[] => {
+  const copy = [...items];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+};
+
+const createCards = (language: LanguagePair): CardItem[] => {
+  const second = SECOND_LANGUAGE[language];
+  const picked = shuffle(words as Word[]).slice(0, PAIRS);
+  return shuffle(
+    picked.flatMap((word) => [
+      { key: `${word.id}-eng`, pairId: word.id, text: word.eng, flipped: false, found: false },
+      { key: `${word.id}-${second}`, pairId: word.id, text: word[second], flipped: false, found: false },
+    ]),
+  );
+};
 
 interface GameState {
-  isTimerActive: boolean;
-  timeElapsed: string;
-  matchesFound: number;
-  totalMatches: number;
-  cardsData: CardItem[];
-  openCards: number[];
+  language: LanguagePair;
+  cards: CardItem[];
+  openKeys: string[];
   matchedPairs: number;
-  currentLanguage: string;
-  
-  // Actions
-  setTimeElapsed: (time: string) => void;
-  startTimer: () => void;
-  stopTimer: () => void;
-  handleCardClick: (cardId: number) => void;
-  resetGame: () => void;
-  setCardsData: (cards: CardItem[]) => void;
-  handleLanguageChange: (language: string) => void;
+  seconds: number;
+  isTimerActive: boolean;
+  isWon: boolean;
+
+  newGame: (language?: LanguagePair) => void;
+  flipCard: (key: string) => void;
+  tick: () => void;
 }
 
+export const TOTAL_PAIRS = PAIRS;
+
 export const useGameStore = create<GameState>((set, get) => ({
-  isTimerActive: false,
-  timeElapsed: '00:00',
-  matchesFound: 0,
-  totalMatches: 8,
-  cardsData: [],
-  openCards: [],
+  language: 'English-Estonian',
+  cards: [],
+  openKeys: [],
   matchedPairs: 0,
-  currentLanguage: 'en',
+  seconds: 0,
+  isTimerActive: false,
+  isWon: false,
 
-  setTimeElapsed: (time) => set({ timeElapsed: time }),
-  
-  startTimer: () => set({ isTimerActive: true }),
-  
-  stopTimer: () => set({ isTimerActive: false }),
-
-  handleCardClick: (cardId) => {
-    const { openCards, cardsData, matchedPairs } = get();
-    
-    // If two cards are already open, return
-    if (openCards.length === 2) return;
-    
-    // If card is already matched, return
-    const clickedCard = cardsData.find(card => card.id === cardId);
-    if (clickedCard?.matched) return;
-
-    // Start timer on first card click
-    if (!get().isTimerActive) {
-      get().startTimer();
-    }
-
-    // Add card to open cards
-    const newOpenCards = [...openCards, cardId];
-    set({ openCards: newOpenCards });
-
-    // Check for match if two cards are open
-    if (newOpenCards.length === 2) {
-      const [firstCardId, secondCardId] = newOpenCards;
-      const firstCard = cardsData.find(card => card.id === firstCardId);
-      const secondCard = cardsData.find(card => card.id === secondCardId);
-
-      if (firstCard && secondCard && firstCard.text === secondCard.text) {
-        // Match found
-        const newCardsData = cardsData.map(card => 
-          card.id === firstCardId || card.id === secondCardId
-            ? { ...card, matched: true }
-            : card
-        );
-        
-        const newMatchedPairs = matchedPairs + 1;
-        set({ 
-          cardsData: newCardsData,
-          matchedPairs: newMatchedPairs,
-          openCards: []
-        });
-
-        // Check if game is complete
-        if (newMatchedPairs === get().totalMatches) {
-          get().stopTimer();
-        }
-      } else {
-        // No match - close cards after delay
-        setTimeout(() => {
-          set({ openCards: [] });
-        }, 1000);
-      }
-    }
-  },
-
-  resetGame: () => {
+  newGame: (language = get().language) =>
     set({
-      isTimerActive: false,
-      timeElapsed: '00:00',
-      matchesFound: 0,
-      openCards: [],
+      language,
+      cards: createCards(language),
+      openKeys: [],
       matchedPairs: 0,
-      cardsData: get().cardsData.map(card => ({ ...card, matched: false }))
-    });
+      seconds: 0,
+      isTimerActive: false,
+      isWon: false,
+    }),
+
+  flipCard: (key) => {
+    const { cards, openKeys, isWon } = get();
+    const card = cards.find((c) => c.key === key);
+    if (isWon || !card || card.flipped || card.found || openKeys.length === 2) return;
+
+    const flipped = cards.map((c) => (c.key === key ? { ...c, flipped: true } : c));
+    const nextOpen = [...openKeys, key];
+    set({ cards: flipped, openKeys: nextOpen, isTimerActive: true });
+
+    if (nextOpen.length < 2) return;
+
+    const [first, second] = nextOpen.map((k) => flipped.find((c) => c.key === k)!);
+    if (first.pairId === second.pairId) {
+      const matchedPairs = get().matchedPairs + 1;
+      const isWon = matchedPairs === PAIRS;
+      set({
+        cards: flipped.map((c) => (c.pairId === first.pairId ? { ...c, found: true } : c)),
+        openKeys: [],
+        matchedPairs,
+        isWon,
+        isTimerActive: !isWon,
+      });
+      return;
+    }
+
+    setTimeout(() => {
+      set((state) => ({
+        cards: state.cards.map((c) => (nextOpen.includes(c.key) ? { ...c, flipped: false } : c)),
+        openKeys: [],
+      }));
+    }, 1000);
   },
 
-  setCardsData: (cards) => set({ cardsData: cards }),
-  
-  handleLanguageChange: (language) => set({ currentLanguage: language }),
+  tick: () => set((state) => ({ seconds: state.seconds + 1 })),
 }));
+
+export const formatTime = (seconds: number) =>
+  `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;

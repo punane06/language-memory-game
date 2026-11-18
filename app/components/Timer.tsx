@@ -1,39 +1,18 @@
-import React, { useEffect, useState } from 'react';
+'use client'
+import { useEffect } from 'react';
+import { useGameStore } from '../store/gameStore';
 
-interface TimerProps {
-  isActive: boolean;
-  onTimeUpdate: (formattedTime: string) => void;
-}
-
-const Timer: React.FC<TimerProps> = ({ isActive, onTimeUpdate }) => {
-  const [timeElapsed, setTimeElapsed] = useState(0); // Time in seconds
+const Timer = () => {
+  const isActive = useGameStore((state) => state.isTimerActive);
+  const tick = useGameStore((state) => state.tick);
 
   useEffect(() => {
-    let timerId: NodeJS.Timeout | null = null;
-    if (isActive) {
-      timerId = setInterval(() => {
-        setTimeElapsed((prev) => prev + 1);
-      }, 1000);
-    } else if (timerId) {
-      clearInterval(timerId);
-    }
+    if (!isActive) return;
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, [isActive, tick]);
 
-    return () => {
-      if (timerId) {
-        clearInterval(timerId);
-      }
-    };
-  }, [isActive]);
-
-  useEffect(() => {
-   
-    const minutes = Math.floor(timeElapsed / 60);
-    const seconds = timeElapsed % 60;
-    const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-    onTimeUpdate(formattedTime);
-  }, [timeElapsed, onTimeUpdate]);
-
-  return null; 
+  return null;
 };
 
 export default Timer;
