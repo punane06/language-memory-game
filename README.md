@@ -2,6 +2,12 @@
 
 A fun and educational memory card game built with Next.js and TypeScript that helps you learn and practice language vocabulary.
 
+**Play:** https://language-memory-game.vercel.app
+
+![Language memory game](./docs/screenshot.png)
+
+Made by Kadi Kerner and Kristina Valk. Pick a language pair (English with Estonian, German or Spanish) and find the 8 word pairs as fast as you can.
+
 ## Features
 
 - Modern and responsive UI built with Next.js and React
