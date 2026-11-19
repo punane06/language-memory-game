@@ -6,7 +6,7 @@ A fun and educational memory card game built with Next.js and TypeScript that he
 
 ![Language memory game](./docs/screenshot.png)
 
-Made by Kadi Kerner and Kristina Valk. Pick a language pair (English with Estonian, German or Spanish) and find the 8 word pairs as fast as you can.
+A team project by Kadi Kerner and Kristina Valk from the BCS Koolitus "Women into Web Development" programme (2024). Pick a language pair (English with Estonian, German or Spanish) and find the 8 word pairs as fast as you can.
 
 ## Features
 
